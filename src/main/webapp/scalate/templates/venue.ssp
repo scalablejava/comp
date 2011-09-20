@@ -1,0 +1,50 @@
+<%@ var validationErrors: String %>
+<%@ var values: (String, String, String, String, String, String, String) %>
+<html>
+    <body>
+        <form method="POST" action="/venue/save">
+            <table>
+                <tr>
+                    <td>name *</td>
+                    <td><input type="text" name="name" value='${values._1}'/></td>
+                </tr>
+                <tr>
+                    <td>street</td>
+                    <td><input type="text" name="email" value='${values._2}'/></td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="password" name="password"/></td>
+                </tr>
+                <tr>
+                    <td>re-type password *</td>
+                    <td><input type="password"  name="re-password"/></td>
+                </tr>
+                <tr>
+                    <td>first name</td>
+                    <td><input type="text" name="firstname" value='${values._3}'/></td>
+                </tr>
+                <tr>
+                    <td>last name</td>
+                    <td><input type="text" name="lastname" value='${values._4}'/></td>
+                </tr>
+                <tr>
+                    <td>phone</td>
+                    <td><input type="text" name="phone" value='${values._5}'/></td>
+                </tr>
+                <tr>
+                    <td>mobile</td>
+                    <td><input type="text" name="mobile" value='${values._6}'/></td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td><input type="text" name="address" value='${values._7}'/></td>
+                </tr>
+            </table>
+            <input type="submit" value="register"/>
+        </form>
+        <div>
+            ${unescape(validationErrors)}
+        </div>
+    </body>
+</html>

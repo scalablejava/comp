@@ -1,0 +1,37 @@
+<project name="comp" default="dist" basedir=".">
+    <description>
+        comp build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="lib"  location="lib"/>
+  <property name="webapp" location="${src}/main/webapp"/>
+  <property name="build" location="out/production/comp"/>
+  <property name="dist"  location="dist"/>
+  <property name="jetty-webapp" location="C:\Users\Lissett\dev-tools\jetty-distribution-8.0.1.v20110908\webapps" />
+  <property name="scala-lib" location="C:\Users\Lissett\dev-tools\scala-2.9.1.final\lib" />
+
+
+  <target name="clean" description="deletes comp.war in jetty">
+      <delete file="${jetty-webapp}/comp.war"/>
+  </target>
+
+  <target name="dist" depends="clean" description="generate the distribution" >
+    <!-- Create the distribution directory -->
+
+    <war destfile="${dist}/comp.war" webxml="./src/main/webapp/web.xml">
+      <fileset dir="${webapp}/html"/>
+      <zipfileset dir="${webapp}/css" prefix="css"/>
+      <zipfileset dir="${webapp}/images" prefix="images"/>
+      <webinf dir="${webapp}" includes="scalate/" />
+      <lib dir="${lib}">
+        <exclude name="javaee-api-6.0.jar"/>
+      </lib>
+      <lib dir="${scala-lib}" />
+      <classes dir="${build}"/>
+    </war>
+    <copy file="${dist}/comp.war" todir="${jetty-webapp}"/>
+
+  </target>
+
+</project>

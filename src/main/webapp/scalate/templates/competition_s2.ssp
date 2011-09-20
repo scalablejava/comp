@@ -1,0 +1,131 @@
+<%@ var validationErrors: String %>
+<%@ var venueList: String %>
+<html>
+<head>
+<title>Create Competition - Step 2</title>
+</head>	
+<body>
+<h1>Create Competition</h1> 
+<table>
+	<tr>
+		<td>
+			Start -
+		</td>
+		<td>
+			Competition Information -
+		</td>
+		<td>
+			Venue Information -
+		</td>
+		<td>
+			Settings per Match -
+		</td>
+		<td>
+			Rounds -
+		</td>
+		<td>
+			Finish
+		</td>		
+	</tr>	
+</table>
+<form id="step2" action="/competition/create/step3"  method="post">
+<fieldset>
+<legend>Venue Information</legend>
+<table>
+	<tr>
+        <td>
+            Venue Id
+        </td>
+		<td>
+	  	    Venue Name
+	  </td>
+		<td>
+	  	    Venue Address
+	  </td>
+		<td>
+	  	    Action
+	  </td>	  	  
+	</tr>
+	${unescape(venueList)}
+    <tr>
+        <td colspan="3">
+            <input type="submit" value="Continue"/>
+        </td>
+    </tr>
+</table>
+
+</fieldset>
+</form>
+<br />
+<table>
+	<tr>
+		<td>
+			<form id="addVenue" action="/competition/create/venue/create"  method="POST">
+			<fieldset>
+			<legend>Add Venue</legend>
+			<table>
+				<tr>
+					<td colspan="2">
+						* Mandatory Fields
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Venue Name:
+					</td>
+					<td>
+						<input type="text" id="name" name="name"/>
+					</td>
+				</tr>
+                <tr>
+                    <td>
+                        Street:
+                    </td>
+                    <td>
+                        <input type="text" id="street" name="street"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Suburb:
+                    </td>
+                    <td>
+                        <input type="text" id="suburb" name="suburb"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State:
+                    </td>
+                    <td>
+                        <input type="text" id="state" name="state"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Postcode:
+                    </td>
+                    <td>
+                        <input type="text" id="postcode" name="postcode"/>
+                    </td>
+                </tr>
+				<tr>
+					<td>
+							
+					</td>
+					<td>
+						<input type="submit" value="Add Venue"/>
+					</td>
+				</tr>
+			</table>
+			</fieldset>
+			</form>
+            <div>
+                ${unescape(validationErrors)}
+            </div>
+
+		</td>
+	</tr>
+</table>
+</body>
+</html>

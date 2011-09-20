@@ -1,0 +1,87 @@
+<%@ var validationErrors: String %>
+<%@ var sportOptions: String %>
+<%@ var numberOfTeamsOptions: String %>
+<%@ var matchesBetweenTeamsOptions: String %>
+<%@ var values: (String, Long, Int, Int) %>
+<html>
+<head>
+<title>Create Competition - Step 1</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/text.css" />
+<link rel="stylesheet" href="css/960.css" />
+
+</head>	
+<body>
+
+<div class="container_16">
+	<h1>Create Competition</h1> 
+    <table>
+        <tr>
+            <td>
+                Start -
+            </td>
+            <td>
+                Competition Information -
+            </td>
+            <td>
+                Venue Information -
+            </td>
+            <td>
+                Settings per Match -
+            </td>
+            <td>
+                Rounds -
+            </td>
+            <td>
+                Finish
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <form id="step1" action="/competition/create/step2"  method="post">
+                    <h2>Competition Information</h2>
+                    <div class="grid_4" >Name: *</div>
+                    <div class="grid_9" >
+                        <input type="text" id="competitionName" name="competitionName" value='${values._1}'/>
+                    </div>
+                    <div class="grid_4" >Sport:</div>
+                    <div class="grid_9" >
+                        <select name="sport" id="sport">
+                            <option value="-1">Select Sport</option>
+                            ${unescape(sportOptions)}
+                        </select>
+                    </div>
+                    <div class="grid_4" >Number of Teams:</div>
+                    <div class="grid_9" >
+                        <select name="numberOfTeams" id="numberOfTeams">
+                                <option value="-1">Select Number of Teams</option>
+                                ${unescape(numberOfTeamsOptions)}
+                        </select>
+                    </div>
+                    <div class="grid_4" >Matches Between Teams:</div>
+                    <div class="grid_9" >
+                        <select name="matchesBetweenTeams" id="matchesBetweenTeams">
+                                <option value="-1">Select Matches Between Teams</option>
+                                ${unescape(matchesBetweenTeamsOptions)}
+                        </select>
+                    </div>
+                    <div class="grid_4" >Number of rounds:</div>
+                    <div class="grid_9" ><input type="text" id="numberOfRounds" name="numberOfRounds"/></div>
+                    <div class="grid_4" >Matches Per Rounds:</div>
+                    <div class="grid_9" ><input type="text" id="matchesPerRounds" name="matchesPerRounds"/></div>
+                    <div class="grid_6">ertert</div>
+                    <div class="grid_6"><input type="submit" value="Continue"/></div>
+                </form>
+                <div>
+                    ${unescape(validationErrors)}
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

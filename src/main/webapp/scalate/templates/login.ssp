@@ -1,0 +1,78 @@
+<%@ var validationErrors: String %>
+<%@ var values: (String, String) %>
+
+<html>
+<head>
+<title>Social Competition</title>
+
+<link rel="stylesheet" type="text/css" href="/css/960.css" />
+<link rel="stylesheet" type="text/css" href="/css/social-comp.css" />
+
+</head>
+<body style="background:#ffffff">
+	<div class="container_16" id="container_16">
+		<div class="menu">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About Social Comp</a></li>
+				<li><a href="#">Join Today</a></li>
+				<li style="float:right;padding:6px;">
+                    <form name="login" id="login" action="/login"  method="post">
+					<table>
+						<tr style="font-size:80%;color:#ffffff">
+							<td>Username:</td>
+							<td><input type="text" id="username" name="username" size="15"/></td>
+							<td>Password:</td>
+						  <td><input type="password" id="password" name="password" size="15"/></td>
+						  <td><input type="submit" value="Login"/></td>
+						</tr>
+					</table>
+                    </form>
+				</li>
+			</ul>
+		</div>
+		<div class="grid_8">
+			<p style="font-size:20pt;"> Aqui Va cualquier cosa que quieras decir</p>
+			<img alt="" border="0" src="/images/img1.jpg" />
+		</div>
+		<div class="grid_8">
+			<div class="box-top-green">
+				Join Social Competition Today!
+			</div>
+			<div class="box-bottom-green">
+
+						<form name="register" id="register" action="/register"  method="post">
+                        <table style="font-size:100%;">
+						<tr>
+							<td>Username:</td>
+							<td><input type="text" name="username" size="25" value='${values._1}'/></td>
+						</tr>
+						<tr>
+							<td>Email:</td>
+						  <td><input type="text" name="email" size="25" value='${values._2}'/></td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+						  <td><input type="password" name="password" size="25"/></td>
+						</tr>
+						<tr>
+							<td>Re-type  password:</td>
+						  <td><input type="password" name="re-password" size="25"/></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="submit" value="Register"/></td>
+						</tr>
+                        </table>
+					</form>
+                    <div>
+                        ${unescape(validationErrors)}
+                    </div>
+
+			</div>
+			<div style="font-size:20px">Aqui va orta cosa una informacion </div>
+		</div>
+		<br/>
+	</div>
+</body>
+</html>

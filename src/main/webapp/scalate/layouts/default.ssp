@@ -1,0 +1,11 @@
+<%@ var body: String %>
+<%@ var title: String = "Comp title" %>
+<html>
+<head>
+  <title>${title}</title>
+</head>
+<body>
+  ${unescape(body)}
+  <div class="footer">Common Footer for all pages</div>
+</body>
+</html>
