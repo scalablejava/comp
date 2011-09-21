@@ -8,7 +8,8 @@
   <property name="webapp" location="${src}/main/webapp"/>
   <property name="build" location="out/production/comp"/>
   <property name="dist"  location="dist"/>
-  <property name="jetty-webapp" location="C:\Users\Lissett\dev-tools\jetty-distribution-8.0.1.v20110908\webapps" />
+  <property name="jetty" location="C:\Users\Lissett\dev-tools\jetty-distribution-8.0.1.v20110908" />
+  <property name="jetty-webapp" location="${jetty}\webapps" />
   <property name="scala-lib" location="C:\Users\Lissett\dev-tools\scala-2.9.1.final\lib" />
 
 
@@ -31,6 +32,8 @@
       <classes dir="${build}"/>
     </war>
     <copy file="${dist}/comp.war" todir="${jetty-webapp}"/>
+    <touch file="${jetty}\contexts\comp.xml"/>
+
 
   </target>
 

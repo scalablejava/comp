@@ -3,71 +3,49 @@
 <html>
 <head>
 <title>Create Competition - Step 3</title>
-</head>		
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/social-comp.css" />
+</head>	
 <body>
-<h1>Create Competition</h1> 
-<table>
-	<tr>
-		<td>
-			Start -
-		</td>
-		<td>
-			Competition Information -
-		</td>
-		<td>
-			Venue Information -
-		</td>
-		<td>
-			Settings per Match -
-		</td>
-		<td>
-			Rounds -
-		</td>
-		<td>
-			Finish
-		</td>		
-	</tr>	
-</table>
-<table>
-	<tr>
-		<td>
-			<form id="step3" action="/competition/create/step4"  method="POST">
-			<fieldset>
-			<legend>Settings per Match</legend>
-			<table>
-				<tr>
-					<td colspan="5">
-						* Mandatory Fields
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Match No
-					</td>
-					<td>
-						Venue
-					</td>
-					<td>
-						Day
-					</td>
-					<td>
-						Start (hh:mm:ss)
-					</td>					
-					<td>
-						End (hh:mm:ss)
-					</td>							
-				</tr>
-                ${unescape(settingPerMatchHtml)}
-				<tr>
-					<td colspan="5">
-				  	<input type="submit" value="Continue"/>
-				  </td>					
-			  </tr>	
-			</table>
-			</fieldset>
-			</form>
-		</td>
-	</tr>
-</table>
+<div class="container_16">
+	<div class="grid_16" id="tittle1">Create Competition</div>
+		<br/><br/>
+		 <div class="box1">
+			<div class="grid_2"><p>Start</p></div>
+		  	<div class="grid_3"><p>1. Competition Information</p></div>
+		  	<div class="grid_3"><p>2. Venue Information</p></div>
+            <div class="grid_3"><p class="selected_step">3. Settings per Match</p></div>
+		  	<div class="grid_3"><p>4. Rounds</p></div>
+		  	<div class="grid_2"><p>Finish</p></div>
+	     </div>
+    <br/>
+    <div class="box_form">
+        <form id="step3" action="/competition/create/step4" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <div class="grid_16"><span class="tittle2">Settings per Match--</span></div>
+                        <div class="grid_2" style="text-align:center"><p>Match No *</p></div>
+                        <div class="grid_4" style="text-align:center"><p>Venue</p></div>
+                        <div class="grid_3" style="text-align:center"><p>Day</p></div>
+                        <div class="grid_3" style="text-align:center"><p>Start (hh:mm:ss)</p></div>
+                        <div class="grid_3" style="text-align:center"><p>End (hh:mm:ss)</p></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ${unescape(settingPerMatchHtml)}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Continue"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+   	</div>
+</div>
 </body>
 </html>

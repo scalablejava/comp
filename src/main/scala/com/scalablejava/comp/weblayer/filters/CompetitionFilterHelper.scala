@@ -62,7 +62,7 @@ class CompetitionFilterHelper extends CompBaseFilter {
 
   def comboDays(number: Int): String = {
     var html = ""
-    html += "<select name='day" + number + "' id='day" + number + "'>"
+    html += "<select style='width:220px;' name='day" + number + "' id='day" + number + "'>"
     html += "  <option value='-1'>Select Day</option>"
     Misc.daysOfTheWeek.foreach(d => {
       html += "<option value='" + d._1 + "'>" + d._2 + "</option>"
@@ -73,7 +73,7 @@ class CompetitionFilterHelper extends CompBaseFilter {
 
   def comboVenue(competitionId: Long, number: Int): String = {
     var html = ""
-    html += "<select name='venue" + number + "' id='venue" + number + "'>"
+    html += "<select style='width:220px;' name='venue" + number + "' id='venue" + number + "'>"
     html += "  <option value='-1'>Select Venue</option>"
     venues(competitionId).foreach(v => {
       html += "<option value='" + v.id + "'>" + v.name + "</option>"
@@ -96,13 +96,11 @@ class CompetitionFilterHelper extends CompBaseFilter {
     var html = ""
 
     for (i<-1 to (numberOfTeams/2)) {
-      html += "<tr>"
-      html += "<td>" + i + "</td>"
-      html += "<td>" + comboVenue(competitionId, i) + "</td>"
-      html += "<td>" + comboDays(i) + "</td>"
-      html += "<td><input type='text' name='startTime" + i + "' id='startTime" + i + "'/></td>"
-      html += "<td><input type='text' name='endTime" + i + "' id='endTime" + i + "'/></td>"
-      html += "</tr>"
+      html += "<div class=\"grid_2\" style='height:25px;text-align:center;'>" + i + "</div>"
+      html += "<div class=\"grid_4\" style='width:90px;text-align:center;'>" + comboVenue(competitionId, i) + "</div>"
+      html += "<div class=\"grid_3\" style='width:90px;text-align:center;'>" + comboDays(i) + "</div>"
+      html += "<div class=\"grid_3\" style='width:30px;'><input type='text' name='startTime" + i + "' id='startTime" + i + "'/></div>"
+      html += "<div class=\"grid_3\" style='width:30px;'><input type='text' name='endTime" + i + "' id='endTime" + i + "'/></div>"
     }
     return html
   }

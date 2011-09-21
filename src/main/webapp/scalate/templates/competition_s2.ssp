@@ -3,129 +3,69 @@
 <html>
 <head>
 <title>Create Competition - Step 2</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/social-comp.css" />
 </head>	
 <body>
-<h1>Create Competition</h1> 
-<table>
-	<tr>
-		<td>
-			Start -
-		</td>
-		<td>
-			Competition Information -
-		</td>
-		<td>
-			Venue Information -
-		</td>
-		<td>
-			Settings per Match -
-		</td>
-		<td>
-			Rounds -
-		</td>
-		<td>
-			Finish
-		</td>		
-	</tr>	
-</table>
-<form id="step2" action="/competition/create/step3"  method="post">
-<fieldset>
-<legend>Venue Information</legend>
-<table>
-	<tr>
-        <td>
-            Venue Id
-        </td>
-		<td>
-	  	    Venue Name
-	  </td>
-		<td>
-	  	    Venue Address
-	  </td>
-		<td>
-	  	    Action
-	  </td>	  	  
-	</tr>
-	${unescape(venueList)}
-    <tr>
-        <td colspan="3">
-            <input type="submit" value="Continue"/>
-        </td>
-    </tr>
-</table>
+<div class="container_16">
+	<div class="grid_16" id="tittle1">Create Competition</div>
+		<br/><br/>
+		 <div class="box1">
+			<div class="grid_2"><p>Start</p></div>
+		  	<div class="grid_3"><p>1. Competition Information</p></div>
+		  	<div class="grid_3"><p class="selected_step">2. Venue Information</p></div>
+            <div class="grid_3"><p>3. Settings per Match</p></div>
+		  	<div class="grid_3"><p>4. Rounds</p></div>
+		  	<div class="grid_2"><p>Finish</p></div>
+	     </div>
+    <br/>
+    <div class="box_form">
+        <form id="addVenue" action="/competition/create/venue/create"  method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <div class="grid_16"><span class="tittle2">Add Venue</span></div>
+                        <div class="grid_4"><p>Venue Name: *</p></div>
+                        <div class="grid_9"><p><input type="text" name="name" size="30"/></p></div>
+                        <div class="grid_4"><p>Street:</p></div>
+                        <div class="grid_9"><p><input type="text" id="street" name="street" size="30"/></p></div>
+                        <div class="grid_4"><p>Suburb:</p></div>
+                        <div class="grid_9"><p><input type="text" id="suburb" name="suburb" size="30"/></p></div>
+                        <div class="grid_4"><p>State:</p></div>
+                        <div class="grid_9"><p><input type="text" id="state" name="state" size="30"/></p></div>
+                        <div class="grid_4"><p>Postcode:</p></div>
+                        <div class="grid_9"><p><input type="text" id="postcode" name="postcode" size="30"/></p></div>
+                        <div class="grid_4">&nbsp;</div>
+                        <div class="grid_4" style="text-align:right"><input type="submit" value="Add Venue"/></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+		<br/><br/>
+        <form id="step2" action="/competition/create/step3" method="post">
+            <table>
+                <tr>
+                    <td colspan="3"><div class="grid_16" style="text-align:center;font-size:120%;color:#006A9D;">Venue Information</div></td></tr>
+                <tr>
+                    <td>Venue Name</td>
+                    <td>Venue Address</td>
+                    <td>Action</td>
+                </tr>
+                ${unescape(venueList)}
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><div style="text-align:right"><input type="submit" value="Continue"/></div></td>
+                </tr>
+            </table>
+        </form>
 
-</fieldset>
-</form>
-<br />
-<table>
-	<tr>
-		<td>
-			<form id="addVenue" action="/competition/create/venue/create"  method="POST">
-			<fieldset>
-			<legend>Add Venue</legend>
-			<table>
-				<tr>
-					<td colspan="2">
-						* Mandatory Fields
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Venue Name:
-					</td>
-					<td>
-						<input type="text" id="name" name="name"/>
-					</td>
-				</tr>
-                <tr>
-                    <td>
-                        Street:
-                    </td>
-                    <td>
-                        <input type="text" id="street" name="street"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Suburb:
-                    </td>
-                    <td>
-                        <input type="text" id="suburb" name="suburb"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        State:
-                    </td>
-                    <td>
-                        <input type="text" id="state" name="state"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Postcode:
-                    </td>
-                    <td>
-                        <input type="text" id="postcode" name="postcode"/>
-                    </td>
-                </tr>
-				<tr>
-					<td>
-							
-					</td>
-					<td>
-						<input type="submit" value="Add Venue"/>
-					</td>
-				</tr>
-			</table>
-			</fieldset>
-			</form>
-            <div>
-                ${unescape(validationErrors)}
-            </div>
-
-		</td>
-	</tr>
-</table>
+   	</div>
+</div>
 </body>
 </html>

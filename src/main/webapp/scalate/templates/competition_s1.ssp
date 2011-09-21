@@ -7,81 +7,65 @@
 <head>
 <title>Create Competition - Step 1</title>
 <link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/text.css" />
 <link rel="stylesheet" href="css/960.css" />
-
+<link rel="stylesheet" href="css/social-comp.css" />
 </head>	
 <body>
-
 <div class="container_16">
-	<h1>Create Competition</h1> 
-    <table>
-        <tr>
-            <td>
-                Start -
-            </td>
-            <td>
-                Competition Information -
-            </td>
-            <td>
-                Venue Information -
-            </td>
-            <td>
-                Settings per Match -
-            </td>
-            <td>
-                Rounds -
-            </td>
-            <td>
-                Finish
-            </td>
-        </tr>
-    </table>
-
+    <div class="grid_16" id="tittle1">Create Competition</div>
+    <br/><br/>
+    <div class="box1">
+        <div class="grid_2"><p>Start</p></div>
+        <div class="grid_3"><p class="selected_step">1. Competition Information</p></div>
+        <div class="grid_3"><p>2. Venue Information</p>
+        </div><div class="grid_3"><p>3. Settings per Match</p></div>
+        <div class="grid_3"><p>4. Rounds</p></div>
+        <div class="grid_2"><p>Finish</p></div>
+    </div>
+    <br/>
+    <div class="box_form">
     <table>
         <tr>
             <td>
                 <form id="step1" action="/competition/create/step2"  method="post">
-                    <h2>Competition Information</h2>
-                    <div class="grid_4" >Name: *</div>
-                    <div class="grid_9" >
-                        <input type="text" id="competitionName" name="competitionName" value='${values._1}'/>
-                    </div>
-                    <div class="grid_4" >Sport:</div>
-                    <div class="grid_9" >
-                        <select name="sport" id="sport">
+                    <div class="grid_16"><span class="tittle2">Competition Information</span></div>
+                    <div class="grid_4"><p>Name: *</p></div>
+                    <div class="grid_12"><p><input type="text" id="competitionName" name="competitionName" value='${values._1}'/></p></div>
+                    <div class="grid_4"><p>Sport:</p></div>
+                    <div class="grid_12"><p>
+                        <select name="sport" id="sport" style="width:220px">
                             <option value="-1">Select Sport</option>
                             ${unescape(sportOptions)}
                         </select>
-                    </div>
-                    <div class="grid_4" >Number of Teams:</div>
-                    <div class="grid_9" >
-                        <select name="numberOfTeams" id="numberOfTeams">
+                    </p></div>
+                    <div class="grid_4"><p>Number of Teams:</p></div>
+                    <div class="grid_9"><p>
+                        <select name="numberOfTeams" id="numberOfTeams" style="width:220px">
                                 <option value="-1">Select Number of Teams</option>
                                 ${unescape(numberOfTeamsOptions)}
                         </select>
-                    </div>
-                    <div class="grid_4" >Matches Between Teams:</div>
-                    <div class="grid_9" >
-                        <select name="matchesBetweenTeams" id="matchesBetweenTeams">
+                    </p></div>
+                    <div class="grid_4"><p>Matches Between Teams:</p></div>
+                    <div class="grid_12"><p>
+                        <select name="matchesBetweenTeams" id="matchesBetweenTeams" style="width:220px">
                                 <option value="-1">Select Matches Between Teams</option>
                                 ${unescape(matchesBetweenTeamsOptions)}
                         </select>
-                    </div>
-                    <div class="grid_4" >Number of rounds:</div>
-                    <div class="grid_9" ><input type="text" id="numberOfRounds" name="numberOfRounds"/></div>
-                    <div class="grid_4" >Matches Per Rounds:</div>
-                    <div class="grid_9" ><input type="text" id="matchesPerRounds" name="matchesPerRounds"/></div>
-                    <div class="grid_6">ertert</div>
-                    <div class="grid_6"><input type="submit" value="Continue"/></div>
+                    </p></div>
+                    <div class="grid_4"><p>Number of rounds:</p></div>
+                    <div class="grid_12"><p><input type="text" id="numberOfRounds" name="numberOfRounds" size="30"/></p></div>
+                    <div class="grid_4"><p>Matches Per Rounds:</p></div>
+                    <div class="grid_12"><p><input type="text" id="matchesPerRounds" name="matchesPerRounds" size="30"/></p></div>
+                    <div class="grid_4">&nbsp;</div>
+                    <div class="grid_4" style="text-align:right"><input type="submit" value="Continue"/></div>
                 </form>
-                <div>
+                <div class="grid_16">
                     ${unescape(validationErrors)}
                 </div>
-
-            </td>
+            </td>                                                "
         </tr>
     </table>
+</div>
 </div>
 </body>
 </html>

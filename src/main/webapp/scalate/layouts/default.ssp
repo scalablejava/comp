@@ -2,10 +2,12 @@
 <%@ var title: String = "Comp title" %>
 <html>
 <head>
-  <title>${title}</title>
+    <title>${title}</title>
+    <link rel="stylesheet" type="text/css" href="/css/960.css" />
+    <link rel="stylesheet" type="text/css" href="/css/social-comp.css" />
 </head>
 <body>
   ${unescape(body)}
-  <div class="footer">Common Footer for all pages</div>
+  <div class="footer_test">Common Footer for all pages</div>
 </body>
 </html>

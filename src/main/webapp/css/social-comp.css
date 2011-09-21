@@ -4,7 +4,7 @@
 		-moz-border-radius: 10px;
 		border-radius: 10px;
 		width:960px;
-		height:45px;
+		height:46px;
 		background:#40739b;	
 }
  
@@ -83,6 +83,8 @@
 		position:absolute;
 		top:550px;
 		background:#ccddf2;
+        margin-left: auto;
+        margin-right: auto;
 }
 #gradient {
 		/* For gradient */
@@ -96,10 +98,9 @@
 		color:#006A9D;	
 		border-bottom:thin double #006A9D;
 }
-#tittle2 {
+.tittle2 {
 		font-size:120%;
-		color:#006A9D;	
-		
+		color:#006A9D;
 }
 
 .box1 {
