@@ -118,6 +118,7 @@
 		border-radius: 7px 7px 7px 7px;
 	}
 .box_form {
+		overflow:hidden;
 		-moz-border-radius: 10px 10px 10px 10px;
 		border-radius: 10px 10px 10px 10px;
 		border-color:#7fa0c4;

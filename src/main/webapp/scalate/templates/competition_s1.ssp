@@ -24,47 +24,41 @@
     </div>
     <br/>
     <div class="box_form">
-    <table>
-        <tr>
-            <td>
-                <form id="step1" action="/competition/create/step2"  method="post">
-                    <div class="grid_16"><span class="tittle2">Competition Information</span></div>
-                    <div class="grid_4"><p>Name: *</p></div>
-                    <div class="grid_12"><p><input type="text" id="competitionName" name="competitionName" value='${values._1}'/></p></div>
-                    <div class="grid_4"><p>Sport:</p></div>
-                    <div class="grid_12"><p>
-                        <select name="sport" id="sport" style="width:220px">
-                            <option value="-1">Select Sport</option>
-                            ${unescape(sportOptions)}
-                        </select>
-                    </p></div>
-                    <div class="grid_4"><p>Number of Teams:</p></div>
-                    <div class="grid_9"><p>
-                        <select name="numberOfTeams" id="numberOfTeams" style="width:220px">
-                                <option value="-1">Select Number of Teams</option>
-                                ${unescape(numberOfTeamsOptions)}
-                        </select>
-                    </p></div>
-                    <div class="grid_4"><p>Matches Between Teams:</p></div>
-                    <div class="grid_12"><p>
-                        <select name="matchesBetweenTeams" id="matchesBetweenTeams" style="width:220px">
-                                <option value="-1">Select Matches Between Teams</option>
-                                ${unescape(matchesBetweenTeamsOptions)}
-                        </select>
-                    </p></div>
-                    <div class="grid_4"><p>Number of rounds:</p></div>
-                    <div class="grid_12"><p><input type="text" id="numberOfRounds" name="numberOfRounds" size="30"/></p></div>
-                    <div class="grid_4"><p>Matches Per Rounds:</p></div>
-                    <div class="grid_12"><p><input type="text" id="matchesPerRounds" name="matchesPerRounds" size="30"/></p></div>
-                    <div class="grid_4">&nbsp;</div>
-                    <div class="grid_4" style="text-align:right"><input type="submit" value="Continue"/></div>
-                </form>
-                <div class="grid_16">
-                    ${unescape(validationErrors)}
-                </div>
-            </td>                                                "
-        </tr>
-    </table>
+        <form id="step1" action="/competition/create/step2"  method="post">
+            <div class="grid_14"><span class="tittle2">Competition Information</span></div>
+            <div class="grid_4"><p>Name: *</p></div>
+            <div class="grid_11"><p><input type="text" id="competitionName" name="competitionName" value='${values._1}'/></p></div>
+            <div class="grid_4"><p>Sport:</p></div>
+            <div class="grid_11"><p>
+                <select name="sport" id="sport" style="width:220px">
+                    <option value="-1">Select Sport</option>
+                    ${unescape(sportOptions)}
+                </select>
+            </p></div>
+            <div class="grid_4"><p>Number of Teams:</p></div>
+            <div class="grid_11"><p>
+                <select name="numberOfTeams" id="numberOfTeams" style="width:220px">
+                        <option value="-1">Select Number of Teams</option>
+                        ${unescape(numberOfTeamsOptions)}
+                </select>
+            </p></div>
+            <div class="grid_4"><p>Matches Between Teams:</p></div>
+            <div class="grid_11"><p>
+                <select name="matchesBetweenTeams" id="matchesBetweenTeams" style="width:220px">
+                        <option value="-1">Select Matches Between Teams</option>
+                        ${unescape(matchesBetweenTeamsOptions)}
+                </select>
+            </p></div>
+            <div class="grid_4"><p>Number of rounds:</p></div>
+            <div class="grid_11"><p><input type="text" id="numberOfRounds" name="numberOfRounds" size="30"/></p></div>
+            <div class="grid_4"><p>Matches Per Rounds:</p></div>
+            <div class="grid_11"><p><input type="text" id="matchesPerRounds" name="matchesPerRounds" size="30"/></p></div>
+            <div class="grid_4">&nbsp;</div>
+            <div class="grid_11" style="text-align:right"><input type="submit" value="Continue"/></div>
+        </form>
+        <div class="grid_16">
+            ${unescape(validationErrors)}
+        </div>
 </div>
 </div>
 </body>

@@ -22,25 +22,19 @@
     <br/>
     <div class="box_form">
         <form id="addVenue" action="/competition/create/venue/create"  method="POST">
-            <table>
-                <tr>
-                    <td>
-                        <div class="grid_16"><span class="tittle2">Add Venue</span></div>
-                        <div class="grid_4"><p>Venue Name: *</p></div>
-                        <div class="grid_9"><p><input type="text" name="name" size="30"/></p></div>
-                        <div class="grid_4"><p>Street:</p></div>
-                        <div class="grid_9"><p><input type="text" id="street" name="street" size="30"/></p></div>
-                        <div class="grid_4"><p>Suburb:</p></div>
-                        <div class="grid_9"><p><input type="text" id="suburb" name="suburb" size="30"/></p></div>
-                        <div class="grid_4"><p>State:</p></div>
-                        <div class="grid_9"><p><input type="text" id="state" name="state" size="30"/></p></div>
-                        <div class="grid_4"><p>Postcode:</p></div>
-                        <div class="grid_9"><p><input type="text" id="postcode" name="postcode" size="30"/></p></div>
-                        <div class="grid_4">&nbsp;</div>
-                        <div class="grid_4" style="text-align:right"><input type="submit" value="Add Venue"/></div>
-                    </td>
-                </tr>
-            </table>
+            <div class="grid_16"><span class="tittle2">Add Venue</span></div>
+            <div class="grid_4"><p>Venue Name: *</p></div>
+            <div class="grid_11"><p><input type="text" name="name" size="30"/></p></div>
+            <div class="grid_4"><p>Street:</p></div>
+            <div class="grid_11"><p><input type="text" id="street" name="street" size="30"/></p></div>
+            <div class="grid_4"><p>Suburb:</p></div>
+            <div class="grid_11"><p><input type="text" id="suburb" name="suburb" size="30"/></p></div>
+            <div class="grid_4"><p>State:</p></div>
+            <div class="grid_11"><p><input type="text" id="state" name="state" size="30"/></p></div>
+            <div class="grid_4"><p>Postcode:</p></div>
+            <div class="grid_11"><p><input type="text" id="postcode" name="postcode" size="30"/></p></div>
+            <div class="grid_4">&nbsp;</div>
+            <div class="grid_4" style="text-align:right"><input type="submit" value="Add Venue"/></div>
         </form>
 		<br/><br/>
         <form id="step2" action="/competition/create/step3" method="post">
@@ -64,7 +58,9 @@
                 </tr>
             </table>
         </form>
-
+        <div class="grid_16">
+            ${unescape(validationErrors)}
+        </div>
    	</div>
 </div>
 </body>

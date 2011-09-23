@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>Competition Information</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/social-comp.css" />
+<!-- Yui Stuff -->
+<!-- Sam Skin CSS for TabView -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
+<!-- JavaScript Dependencies for Tabview: -->
+<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<!-- OPTIONAL: Connection (required for dynamic loading of data) -->
+<script src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+<!-- Source file for TabView -->
+<script src="http://yui.yahooapis.com/2.9.0/build/tabview/tabview-min.js"></script>
+<!-- Combo-handled YUI CSS files: -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/datatable/assets/skins/sam/datatable.css&2.9.0/build/tabview/assets/skins/sam/tabview.css">
+<!-- Combo-handled YUI JS files: -->
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.9.0/build/yahoo-dom-event/yahoo-dom-event.js\&2.9.0/build/element/element-min.js&2.9.0/build/datasource/datasource-min.js&2.9.0/build/datatable/datatable-min.js&2.9.0/build/tabview/tabview-min.js"></script>
+<script type="text/javascript">
+Team = {
+    teams: [
+        {Id:"team01", Name:"Los Leones del Caracas", Administrator:"Roberto Leon"},
+        {Id:"team02", Name:"Los Tigres de Aragua", Administrator:"Marcia Matos"},
+        {Id:"team03", Name:"Agilas del Zulia", Administrator:"Ada Otero"},
+        {Id:"team03", Name:"NAvegantes del Magallanes", Administrator:"Alfredo Castillo"}
+    ]
+}
+Fixture = {
+    fixture: [
+        {Local:"Los Leones del Caracas", Visitor:"Los Tigres de Aragua", Venue:"Universitario",Date:new Date(2011, 12, 6)},
+        {Local:"Los Tigres de Aragua", Visitor:"Agilas del Zulia", Venue:"Quien sabe como se llama",Date:new Date(2011, 12, 7)},
+        {Local:"Los Leones del Caracas", Visitor:"Navegantes del Magallanes", Venue:"Univeristario", Date:new Date(2011, 12, 7)},
+        {Local:"Agilas del Zulia", Visitor:"Los Tigres de Aragua", Venue:"Un maracucho que no me acuerdo", Date:new Date(2011, 12, 6)}
+    ]
+}
+Ladder = {
+    ladder: [
+        {Team:"Los Leones del Caracas", Win:"5", Lost:"0",Draw:"3", Points:"50"},
+        {Team:"Los Tigres de Aragua",  Win:"2", Lost:"10",Draw:"1", Points:"50"},
+        {Team:"NAvegantes del Magallanes", Win:"0", Lost:"12",Draw:"3", Points:"10"},
+        {Team:"Agilas del Zulia", Win:"0", Lost:"2",Draw:"3", Points:"10"}
+    ]
+}
+
+YAHOO.util.Event.addListener(window, "load", function() {
+    YAHOO.example.TabView = function() {
+        var myColumnDefs = [
+            {key:"Id", sortable:true},
+            {key:"Name", sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}},
+            {key:"Administrator", sortable:true}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(Team.teams);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["Id","Name","Administrator"]
+        };
+
+        var myDataTable =
+                new YAHOO.widget.DataTable("Dtcontainer", myColumnDefs, myDataSource,{scrollable:true,width:"100%"});
+
+        var myTabView = new YAHOO.widget.TabView("tvcontainer");
+        myTabView.getTab(1).addListener("click", function() {myDataTable.onShow()});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable,
+            oTV: myTabView
+        };
+    }();
+});
+YAHOO.util.Event.addListener(window, "load", function() {
+    YAHOO.example.TabView = function() {
+        var myColumnDefs = [
+            {key:"Local", sortable:true},
+            {key:"Visitor", sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}},
+            {key:"Venue", sortable:true},
+            {key:"Date", formatter:YAHOO.widget.DataTable.formatDate, sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(Fixture.fixture);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["Local","Visitor","Venue","Date"]
+        };
+
+        var myDataTable =
+                new YAHOO.widget.DataTable("Dtcontainer2", myColumnDefs, myDataSource,{scrollable:true,width:"100%"});
+
+        var myTabView = new YAHOO.widget.TabView("tvcontainer");
+        myTabView.getTab(1).addListener("click", function() {myDataTable.onShow()});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable,
+            oTV: myTabView
+        };
+    }();
+});
+YAHOO.util.Event.addListener(window, "load", function() {
+    YAHOO.example.TabView = function() {
+        var myColumnDefs = [
+            {key:"Team", sortable:true},
+            {key:"Win", sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}},
+            {key:"Lost", sortable:true},
+            {key:"Draw",  sortable:true},
+            {key:"Points",  sortable:true}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(Ladder.ladder);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["Team","Win","Lost","Draw","Points"]
+        };
+
+        var myDataTable =
+                new YAHOO.widget.DataTable("Dtcontainer3", myColumnDefs, myDataSource,{scrollable:true,width:"100%"});
+
+        var myTabView = new YAHOO.widget.TabView("tvcontainer");
+        myTabView.getTab(1).addListener("click", function() {myDataTable.onShow()});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable,
+            oTV: myTabView
+        };
+    }();
+});
+</script>
+</head>
+
+<body class="yui-skin-sam">
+	<div class="container_16">
+		<table>
+			<tr>
+				<td>
+					<h2>Competition Information</h2>
+					<div class="grid_4">Name:</div>
+					<div class="grid_9">&nbsp;</div>
+					<div class="grid_4">Sport:</div>
+					<div class="grid_9">&nbsp;</div>
+					<div class="grid_4">Number of Teams:</div>
+					<div class="grid_9">&nbsp;</div>
+					<div class="grid_4">Matches Between Teams:</div>
+					<div class="grid_9">&nbsp;</div>
+					<div class="grid_4">Number of rounds:</div>
+					<div class="grid_9">&nbsp;</div>
+					<div class="grid_4">Matches Per Rounds:</div>
+					<div class="grid_9">&nbsp;</div>
+				</td>
+			</tr>
+		</table>
+		<div id="tvcontainer" class="yui-navset">
+	    <ul class="yui-nav">
+	        <li class="selected"><a href="#tab1"><em>Teams</em></a></li>
+	        <li><a href="#Tab2"><em>Fixture</em></a></li>
+	        <li><a href="#tab3"><em>Ladder</em></a></li>
+
+	    </ul>
+	    <div class="yui-content">
+	    		<div id="Dtcontainer"></div>
+					<div id="Dtcontainer2"></div>
+					<div id="Dtcontainer3"></div>
+	    </div>
+		</div>
+	</div>
+</body>
+</html>

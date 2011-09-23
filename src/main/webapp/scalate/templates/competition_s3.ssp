@@ -22,28 +22,14 @@
     <br/>
     <div class="box_form">
         <form id="step3" action="/competition/create/step4" method="post">
-            <table>
-                <tr>
-                    <td>
-                        <div class="grid_16"><span class="tittle2">Settings per Match--</span></div>
-                        <div class="grid_2" style="text-align:center"><p>Match No *</p></div>
-                        <div class="grid_4" style="text-align:center"><p>Venue</p></div>
-                        <div class="grid_3" style="text-align:center"><p>Day</p></div>
-                        <div class="grid_3" style="text-align:center"><p>Start (hh:mm:ss)</p></div>
-                        <div class="grid_3" style="text-align:center"><p>End (hh:mm:ss)</p></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        ${unescape(settingPerMatchHtml)}
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Continue"/>
-                    </td>
-                </tr>
-            </table>
+            <div class="grid_16"><span class="tittle2">Settings per Match</span></div>
+            <div class="grid_2" style="text-align:center"><p>Match No *</p></div>
+            <div class="grid_4" style="text-align:center"><p>Venue</p></div>
+            <div class="grid_3" style="text-align:center"><p>Day</p></div>
+            <div class="grid_3" style="text-align:center"><p>Start (hh:mm:ss)</p></div>
+            <div class="grid_3" style="text-align:center"><p>End (hh:mm:ss)</p></div>
+            ${unescape(settingPerMatchHtml)}
+            <div class="grid_16"><input type="submit" value="Continue---"/></div>
         </form>
    	</div>
 </div>

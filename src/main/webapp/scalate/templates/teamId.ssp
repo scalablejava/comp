@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Competition Information</title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/960.css" />
+<link rel="stylesheet" href="css/social-comp.css" />
+<!-- Yui Stuff -->
+<!-- Sam Skin CSS for TabView -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
+<!-- JavaScript Dependencies for Tabview: -->
+<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<!-- OPTIONAL: Connection (required for dynamic loading of data) -->
+<script src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+<!-- Source file for TabView -->
+<script src="http://yui.yahooapis.com/2.9.0/build/tabview/tabview-min.js"></script>
+<!-- Combo-handled YUI CSS files: -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/datatable/assets/skins/sam/datatable.css\&2.9.0/build/tabview/assets/skins/sam/tabview.css">
+
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.9.0/build/yahoo-dom-event/yahoo-dom-event.js\&2.9.0/build/element/element-min.js\&2.9.0/build/datasource/datasource-min.js\&2.9.0/build/datatable/datatable-min.js\&2.9.0/build/tabview/tabview-min.js"></script>
+<script type="text/javascript">
+Member = {
+    member: [
+        {Name:"Oliver Leon", Age:"3", Email:"Oleon@gmail.com"},
+        {Name:"Emma Leon", Age:"1", Email:"eleon@gmail.com"},
+        {Name:"Lissett Florido", Age:"36", Email:"lflorido1@gmail.com"}
+    ]
+}
+Competition = {
+    competition: [
+        {Game:"Leones Vs Tigres", Venue:"Universitario", Date:new Date(2011, 12, 6)},
+        {Game:"Agilas Vs Tigres", Venue:"En Aragua", Date:new Date(2011, 12, 6)},
+        {Game:"Leones Vs Agilas", Venue:"Universitario", Date:new Date(2011, 12, 6)}
+    ]
+}
+YAHOO.util.Event.addListener(window, "load", function() {
+    YAHOO.example.TabView = function() {
+        var myColumnDefs = [
+            {key:"Name", sortable:true},
+            {key:"Age", sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}},
+            {key:"Email", sortable:true}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(Member.member);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["Name","Age","Email"]
+        };
+
+        var myDataTable =
+                new YAHOO.widget.DataTable("Dtcontainer", myColumnDefs, myDataSource,{scrollable:true,width:"100%"});
+
+        var myTabView = new YAHOO.widget.TabView("tvcontainer");
+        myTabView.getTab(1).addListener("click", function() {myDataTable.onShow()});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable,
+            oTV: myTabView
+        };
+    }();
+});
+YAHOO.util.Event.addListener(window, "load", function() {
+    YAHOO.example.TabView = function() {
+        var myColumnDefs = [
+            {key:"Game", sortable:true},
+            {key:"Venue", sortable:true, sortOptions:{defaultDir:YAHOO.widget.DataTable.CLASS_DESC}},
+            {key:"Date", sortable:true}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(Competition.competition);
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["Game","Venue","Date"]
+        };
+
+        var myDataTable =
+                new YAHOO.widget.DataTable("Dtcontainer2", myColumnDefs, myDataSource,{scrollable:true,width:"100%"});
+
+        var myTabView = new YAHOO.widget.TabView("tvcontainer");
+        myTabView.getTab(1).addListener("click", function() {myDataTable.onShow()});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable,
+            oTV: myTabView
+        };
+    }();
+});
+</script>
+</head>
+
+<body class="yui-skin-sam">
+	<div class="container_16">
+		<table>
+			<tr>
+				<td>
+					<h2>Competition Information</h2>
+					<div class="grid_4" >Name:</div>
+					<div class="grid_9" >&nbsp;</div>
+					<div class="grid_4" >Created By:</div>
+					<div class="grid_9" >&nbsp;</div>
+					<div class="grid_4" >Created On:</div>
+				</td>
+			</tr>
+		</table>
+		<div id="tvcontainer" class="yui-navset">
+	    <ul class="yui-nav">
+	        <li class="selected"><a href="#tab1"><em>Team Members</em></a></li>
+	        <li><a href="#Tab2"><em>Competitions</em></a></li>
+	    </ul>
+	    <div class="yui-content">
+	    		<div id="Dtcontainer"></div>
+					<div id="Dtcontainer2"></div>
+	    </div>
+		</div>
+	</div>
+</body>
+</html>
