@@ -1,23 +1,23 @@
 <html>
 <head>
-<title>Competition Information</title>
+<title>Team Information</title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/960.css" />
 <link rel="stylesheet" href="css/social-comp.css" />
-<!-- Yui Stuff -->
-<!-- Sam Skin CSS for TabView -->
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
-<!-- JavaScript Dependencies for Tabview: -->
-<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
-<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
-<!-- OPTIONAL: Connection (required for dynamic loading of data) -->
-<script src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
-<!-- Source file for TabView -->
-<script src="http://yui.yahooapis.com/2.9.0/build/tabview/tabview-min.js"></script>
-<!-- Combo-handled YUI CSS files: -->
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/datatable/assets/skins/sam/datatable.css\&2.9.0/build/tabview/assets/skins/sam/tabview.css">
-
-<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.9.0/build/yahoo-dom-event/yahoo-dom-event.js\&2.9.0/build/element/element-min.js\&2.9.0/build/datasource/datasource-min.js\&2.9.0/build/datatable/datatable-min.js\&2.9.0/build/tabview/tabview-min.js"></script>
+    <!-- Yui Stuff -->
+    <!-- Sam Skin CSS for TabView -->
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/tabview/assets/skins/sam/tabview.css">
+    <!-- JavaScript Dependencies for Tabview: -->
+    <script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+    <!-- OPTIONAL: Connection (required for dynamic loading of data) -->
+    <script src="http://yui.yahooapis.com/2.9.0/build/connection/connection-min.js"></script>
+    <!-- Source file for TabView -->
+    <script src="http://yui.yahooapis.com/2.9.0/build/tabview/tabview-min.js"></script>
+    <!-- Combo-handled YUI CSS files: -->
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.9.0/build/datatable/assets/skins/sam/datatable.css&2.9.0/build/tabview/assets/skins/sam/tabview.css">
+    <!-- Combo-handled YUI JS files: -->
+    <script type="text/javascript" src="http://yui.yahooapis.com/combo?2.9.0/build/yahoo-dom-event/yahoo-dom-event.js&2.9.0/build/element/element-min.js&2.9.0/build/datasource/datasource-min.js&2.9.0/build/datatable/datatable-min.js&2.9.0/build/tabview/tabview-min.js"></script>
 <script type="text/javascript">
 Member = {
     member: [
@@ -95,12 +95,13 @@ YAHOO.util.Event.addListener(window, "load", function() {
 		<table>
 			<tr>
 				<td>
-					<h2>Competition Information</h2>
-					<div class="grid_4" >Name:</div>
-					<div class="grid_9" >&nbsp;</div>
-					<div class="grid_4" >Created By:</div>
-					<div class="grid_9" >&nbsp;</div>
-					<div class="grid_4" >Created On:</div>
+					<div class="grid_14"><span class="tittle2">Competition Information</span></div>
+                    <br/>
+                    <div class="grid_4"><p>Name:</p></div>
+					<div class="grid_11"><p>&nbsp;</p></div>
+					<div class="grid_4"><p>Created By:</p></div>
+					<div class="grid_11"><p>&nbsp;</p></div>
+					<div class="grid_4"><p>Created On:</p></div>
 				</td>
 			</tr>
 		</table>
@@ -110,8 +111,8 @@ YAHOO.util.Event.addListener(window, "load", function() {
 	        <li><a href="#Tab2"><em>Competitions</em></a></li>
 	    </ul>
 	    <div class="yui-content">
-	    		<div id="Dtcontainer"></div>
-					<div id="Dtcontainer2"></div>
+	        <div id="Dtcontainer"></div>
+		    <div id="Dtcontainer2"></div>
 	    </div>
 		</div>
 	</div>

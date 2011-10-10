@@ -191,5 +191,23 @@ class CompetitionFilter extends CompetitionFilterHelper {
     redirect("/competition/create/laststep")
   }
 
-
+  //Agregado por Lissett
+    get("/competition/competitionId") {
+    templateEngine.layout("/WEB-INF/scalate/templates/competitionId2.ssp")
+  }
+    get("/competition/teamId") {
+    templateEngine.layout("/WEB-INF/scalate/templates/teamId.ssp")
+  }
+    get("/competition/competitions") {
+    templateEngine.layout("/WEB-INF/scalate/templates/competition.ssp")
+  }
+    get("/competition/teams") {
+    templateEngine.layout("/WEB-INF/scalate/templates/team.ssp")
+  }
+    get("/competition/creteteam") {
+    templateEngine.layout("/WEB-INF/scalate/templates/createteam.ssp")
+  }
+    get("/competition/test") {
+    templateEngine.layout("/WEB-INF/scalate/templates/createteam.ssp")
+  }
 }

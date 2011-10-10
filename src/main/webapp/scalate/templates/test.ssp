@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<title>Social Competition</title>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/960.css"/>
+<link rel="stylesheet" href="css/social-comp.css"/>
+</head>
+<body>
+<div class="container_16">
+	<div class="grid_11">
+		<div class="box-top-blue" style="margin-top:0px">Join Team</div>
+        <form id="searchComp" action="searchTeam.html" method="post">
+            <div class="box-bottom-blue">
+                <div class="grid_3"><p style="text-align:right">Team Name:</p></div>
+                <div class="grid_3"><p><input type="text" name="teamName"/></p></div>
+                <div class="grid_4"><p><input type="submit" value=" Search "/></p></div>
+            </div>
+        </form>
+	</div>
+	<div class="grid_5">
+		<div class="box-top-blue" style="margin-top:0px">
+			My Teams
+		</div>
+		<div class="box-bottom-blue">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Location</td>
+                </tr>
+            </table>
+		</div>
+		<br/><br/>
+		<div class="box-top-blue" style="margin-top:0px">
+			Create Team
+		</div>
+		<div class="box-bottom-blue" id="gradient">
+				<a href="#">New Team</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

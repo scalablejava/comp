@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<title>Social Competition</title>
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/960.css"/>
+<link rel="stylesheet" href="css/social-comp.css"/>
+</head>
+<body>
+<div class="container_16">
+	<div class="grid_11">
+		<div class="box-top-blue" style="margin-top:0px">Join Competition</div>
+        <form id="searchComp" action="searchComp.html" method="post">
+            <div class="box-bottom-blue">
+                <div class="grid_3"><p style="text-align:right">Competition Name:</p></div>
+                <div class="grid_3"><p><input type="text" name="compName"/></p></div>
+                <div class="grid_4"><p><input type="submit" value=" Search "/></p></div>
+            </div>
+        </form>
+	</div>
+	<div class="grid_5">
+		<div class="box-top-blue" style="margin-top:0px">
+			My Competitions
+		</div>
+		<div class="box-bottom-blue">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Location</td>
+                    <td>Organizer</td>
+                </tr>
+            </table>
+		</div>
+		<br/><br/>
+		<div class="box-top-blue" style="margin-top:0px">
+			Create Competition
+		</div>
+		<div class="box-bottom-blue" id="gradient">
+				<a href="#">New Competition</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

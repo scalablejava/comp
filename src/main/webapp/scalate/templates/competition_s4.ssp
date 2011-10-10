@@ -16,8 +16,8 @@
         <div class="grid_2"><p>Start</p></div>
         <div class="grid_3"><p>1. Competition Information</p></div>
         <div class="grid_3"><p>2. Venue Information</p></div>
-        <div class="grid_3"><p>3. Settings per Match</p></div>
-        <div class="grid_3"><p class="selected_step">4. Rounds</p></div>
+        <div class="grid_3"><p>3. Regular season</p></div>
+        <div class="grid_3"><p class="selected_step">4. Semi-final and Final</p></div>
         <div class="grid_2"><p>Finish</p></div>
     </div>
 <br/>
@@ -44,7 +44,10 @@
                 <div class="grid_3" style="text-align:center"><p>End (hh:mm:ss)</p></div>
                 ${unescape(settingFinalRoundHtml)}
             </fieldset>
-            <div class="grid_16"><input type="submit" value="Continue---"/></div>
+            <div style="text-align:right;" class="grid_8">
+            	<input type="submit" value=" Cancel "/>
+            	<input type="submit" value="Continue"/>
+            </div>
         </form>
      </div>
 </div>

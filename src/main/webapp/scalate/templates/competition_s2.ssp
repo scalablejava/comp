@@ -15,8 +15,8 @@
 			<div class="grid_2"><p>Start</p></div>
 		  	<div class="grid_3"><p>1. Competition Information</p></div>
 		  	<div class="grid_3"><p class="selected_step">2. Venue Information</p></div>
-            <div class="grid_3"><p>3. Settings per Match</p></div>
-		  	<div class="grid_3"><p>4. Rounds</p></div>
+            <div class="grid_3"><p>3. Regular season</p></div>
+		  	<div class="grid_3"><p>4. Semi-final and Final</p></div>
 		  	<div class="grid_2"><p>Finish</p></div>
 	     </div>
     <br/>
@@ -36,7 +36,7 @@
             <div class="grid_4">&nbsp;</div>
             <div class="grid_4" style="text-align:right"><input type="submit" value="Add Venue"/></div>
         </form>
-		<br/><br/>
+		<br/><br/><br/>
         <form id="step2" action="/competition/create/step3" method="post">
             <table>
                 <tr>
@@ -49,11 +49,7 @@
                 ${unescape(venueList)}
                 <tr>
                     <td>&nbsp;</td>
-                </tr>
-                <tr>
                     <td>&nbsp;</td>
-                </tr>
-                <tr>
                     <td><div style="text-align:right"><input type="submit" value="Continue"/></div></td>
                 </tr>
             </table>

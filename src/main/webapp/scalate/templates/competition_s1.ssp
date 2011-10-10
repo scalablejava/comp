@@ -18,8 +18,8 @@
         <div class="grid_2"><p>Start</p></div>
         <div class="grid_3"><p class="selected_step">1. Competition Information</p></div>
         <div class="grid_3"><p>2. Venue Information</p>
-        </div><div class="grid_3"><p>3. Settings per Match</p></div>
-        <div class="grid_3"><p>4. Rounds</p></div>
+        </div><div class="grid_3"><p>3. Regular season</p></div>
+        <div class="grid_3"><p>4. Semi-final and Final</p></div>
         <div class="grid_2"><p>Finish</p></div>
     </div>
     <br/>
@@ -27,7 +27,7 @@
         <form id="step1" action="/competition/create/step2"  method="post">
             <div class="grid_14"><span class="tittle2">Competition Information</span></div>
             <div class="grid_4"><p>Name: *</p></div>
-            <div class="grid_11"><p><input type="text" id="competitionName" name="competitionName" value='${values._1}'/></p></div>
+            <div class="grid_11"><p><input type="text" id="competitionName" name="competitionName" size="30" value='${values._1}'/></p></div>
             <div class="grid_4"><p>Sport:</p></div>
             <div class="grid_11"><p>
                 <select name="sport" id="sport" style="width:220px">
@@ -53,13 +53,15 @@
             <div class="grid_11"><p><input type="text" id="numberOfRounds" name="numberOfRounds" size="30"/></p></div>
             <div class="grid_4"><p>Matches Per Rounds:</p></div>
             <div class="grid_11"><p><input type="text" id="matchesPerRounds" name="matchesPerRounds" size="30"/></p></div>
-            <div class="grid_4">&nbsp;</div>
-            <div class="grid_11" style="text-align:right"><input type="submit" value="Continue"/></div>
+            <div style="text-align:right;" class="grid_8">
+            	<input type="submit" value=" Cancel "/>
+            	<input type="submit" value="Continue"/>
+            </div>
         </form>
         <div class="grid_16">
             ${unescape(validationErrors)}
         </div>
-</div>
+    </div>
 </div>
 </body>
 </html>

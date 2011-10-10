@@ -3,6 +3,12 @@
       <title>Home</title>
     </head>
     <body>
-        <a href="/competition/create/step1">Create a competition</a>
+        <a href="/competition/create/step1">Create a competition</a>   <br/>
+        <a href="/competition/competitionId">Competition Id</a> <br/>
+        <a href="/competition/competitions">Competitions</a> <br/>
+        <a href="/competition/teamId">Team Id</a> <br/>
+        <a href="/competition/teams">Team</a><br/>
+        <a href="/competition/creteteam">Create Team</a>  <br/>
+        <a href="/competition/test">test</a>  <br/>
     </body>
 </html>
